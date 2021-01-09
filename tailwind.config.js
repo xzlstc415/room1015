@@ -4,8 +4,8 @@ module.exports = {
   purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      roboto: ['Roboto'],
-      robotoMedium: ['Roboto Medium'],
+      roboto: ['Lato'],
+      josefinSans: ['JosefinSans'],
     },
     extend: {
       colors: {

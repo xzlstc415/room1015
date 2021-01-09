@@ -1,3 +1,6 @@
+@import './fonts/Josefin_Sans/stylesheet.css';
+@import './fonts/Lato/stylesheet.css';
+
 @tailwind base;
 
 h1 {
@@ -19,23 +22,12 @@ h4 {
 
 html {
   font-size: 14px;
+  box-sizing: border-box;
   @apply text-black-2;
 }
 
-@media only screen and (min-width: 1280px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 18px;
-  }
-}
-
 body {
-  font-family: 'Roboto';
+  font-family: 'Lato';
   margin: 0;
   background-color: white;
   /* overflow: hidden; */

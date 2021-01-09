@@ -1,7 +1,8 @@
+import Layout from '../components/shared/Layout';
 const Blog = () => (
-  <div>
+  <Layout>
     <div className="text-4xl">Blog</div>
-  </div>
+  </Layout>
 );
 
 export default Blog;

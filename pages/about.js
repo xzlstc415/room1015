@@ -1,7 +1,9 @@
+import Layout from '../components/shared/Layout';
+
 const About = () => (
-  <div>
+  <Layout>
     <div className="text-4xl">About</div>
-  </div>
+  </Layout>
 );
 
 export default About;

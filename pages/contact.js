@@ -1,7 +1,8 @@
+import Layout from '../components/shared/Layout';
 const Contact = () => (
-  <div>
+  <Layout>
     <div className="text-4xl">Contact</div>
-  </div>
+  </Layout>
 );
 
 export default Contact;

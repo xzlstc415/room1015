@@ -1,7 +1,9 @@
+import Layout from '../components/shared/Layout';
+
 const Projects = () => (
-  <div>
+  <Layout>
     <div className="text-4xl">Projects</div>
-  </div>
+  </Layout>
 );
 
 export default Projects;

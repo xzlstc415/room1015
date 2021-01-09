@@ -1,7 +1,9 @@
+import Layout from '../components/shared/Layout';
+
 const Process = () => (
-  <div>
+  <Layout>
     <div className="text-4xl">Process</div>
-  </div>
+  </Layout>
 );
 
 export default Process;

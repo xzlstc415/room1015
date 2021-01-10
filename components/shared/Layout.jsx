@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 import Head from 'next/head';
 import Navbar from './Navbar';
-import Link from 'next/link';
+import Footer from './Footer';
 
 const Layout = ({ children, title = 'Aoyama Design Inc.' }) => {
   return (
@@ -22,6 +22,7 @@ const Layout = ({ children, title = 'Aoyama Design Inc.' }) => {
       >
         <Navbar />
         {children}
+        <Footer />
       </div>
     </div>
   );

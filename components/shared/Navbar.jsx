@@ -18,9 +18,9 @@ const Navbar = () => (
     <Link href="/">
       <a
         css={css`
-          height: 96px;
-          width: 96px;
-          background: url('/Logo.png') no-repeat center;
+          height: 120px;
+          width: 120px;
+          background: url('/aoyamadesign-logo4-04.jpg') no-repeat center;
           background-size: contain;
         `}
         className="my-5 cursor-pointer"

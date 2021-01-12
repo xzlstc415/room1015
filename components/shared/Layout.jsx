@@ -21,7 +21,7 @@ const Layout = ({ children, title = 'Aoyama Design Inc.' }) => {
         `}
       >
         <Navbar />
-        {children}
+        <div>{children}</div>
         <Footer />
       </div>
     </div>

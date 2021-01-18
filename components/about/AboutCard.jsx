@@ -12,7 +12,12 @@ const AboutCard = ({
   imagePosition = "left",
 }) => (
   <Fade bottom duration={1000} distance="25px">
-    <div className="flex flex-col bg-gray-1 mb-4 p-3 md:p-0 lg:p-0 md:bg-transparent lg:bg-transparent md:mx-0 lg:mx-0 md:flex-row lg:flex-row">
+    <div
+      className={
+        (imagePosition === "left" ? "flex-col flex" : "flex flex-col-reverse") +
+        " bg-gray-1 mb-4 p-3 md:p-0 lg:p-0 md:bg-transparent lg:bg-transparent md:mx-0 lg:mx-0 md:flex-row lg:flex-row"
+      }
+    >
       {imagePosition === "left" && image ? (
         <div className=" mx-auto bg-gray-1 md:mr-4 lg:mr-4">
           <Image

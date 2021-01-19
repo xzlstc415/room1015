@@ -1,7 +1,7 @@
-import Layout from "../components/shared/Layout";
-import Image from "next/image";
-import AboutCard from "../components/about/AboutCard";
-import Fade from "react-reveal/Fade";
+import Layout from '../components/shared/Layout';
+import Image from 'next/image';
+import AboutCard from '../components/about/AboutCard';
+import Fade from 'react-reveal/Fade';
 
 const About = () => (
   <Layout>
@@ -21,7 +21,7 @@ const About = () => (
                 sunt in culpa qui officia deserunt mollit anim id est laborum."
               </p>
             </div>
-            <Image src="/../public/temp-picture.png" width={600} height={458} />
+            <Image src="/temp-picture.png" width={600} height={458} />
           </div>
         </Fade>
       </div>

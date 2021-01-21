@@ -32,10 +32,15 @@ const Layout = ({ children, title = "Aoyama Design Inc." }) => {
           background-color: transparent;
         `}
       >
-        {isMenuOpen ? <FullScreenMenu toggleMenu={toggleMenu} /> : null}
-        <Navbar toggleMenu={toggleMenu} />
-        <div>{children}</div>
-        <Footer />
+        {isMenuOpen ? (
+          <FullScreenMenu toggleMenu={toggleMenu} />
+        ) : (
+          <div>
+            <Navbar toggleMenu={toggleMenu} />
+            <div>{children}</div>
+            <Footer />
+          </div>
+        )}
       </div>
     </div>
   );

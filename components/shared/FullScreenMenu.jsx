@@ -14,27 +14,27 @@ const BigNavLink = ({ href, children, offset }) => (
 );
 
 const FullScreenMenu = ({ toggleMenu }) => (
-  <Fade duration={500}>
-    <div className="z-50 absolute w-screen h-screen bg-white">
-      <div className="flex mb-14 items-center px-4">
-        <Link href="/">
-          <a
-            css={css`
-              height: 120px;
-              width: 120px;
-              background: url("/aoyamadesign-logo4-04.jpg") no-repeat center;
-              background-size: contain;
-            `}
-            className="my-5 cursor-pointer"
-          />
-        </Link>
-        <div
-          className="ml-auto text-3xl font-josefinSans"
-          onClick={() => toggleMenu()}
-        >
-          Close
-        </div>
+  <div className="z-50 absolute w-screen h-screen bg-white">
+    <div className="flex mb-14 items-center px-4">
+      <Link href="/">
+        <a
+          css={css`
+            height: 120px;
+            width: 120px;
+            background: url("/aoyamadesign-logo4-04.jpg") no-repeat center;
+            background-size: contain;
+          `}
+          className="my-5 cursor-pointer"
+        />
+      </Link>
+      <div
+        className="ml-auto text-3xl font-josefinSans"
+        onClick={() => toggleMenu()}
+      >
+        Close
       </div>
+    </div>
+    <Fade duration={500}>
       <div className="px-8">
         <div className="flex flex-col space-y-5 mb-14">
           <BigNavLink offset={1} href="/about">
@@ -65,8 +65,8 @@ const FullScreenMenu = ({ toggleMenu }) => (
           <div>Address: 1672A Fischer-Hallman Rd, Kitchener ON N2R 0H9</div>
         </div>
       </div>
-    </div>
-  </Fade>
+    </Fade>
+  </div>
 );
 
 export default FullScreenMenu;

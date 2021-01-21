@@ -1,11 +1,23 @@
 /** @jsxRuntime classic /
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react';
-import Head from 'next/head';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import { jsx, css } from "@emotion/react";
+import Head from "next/head";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { useState } from "react";
+import FullScreenMenu from "./FullScreenMenu";
 
-const Layout = ({ children, title = 'Aoyama Design Inc.' }) => {
+const Layout = ({ children, title = "Aoyama Design Inc." }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    } else if (!isMenuOpen) {
+      setIsMenuOpen(true);
+    }
+  };
+
   return (
     <div>
       <Head>
@@ -20,7 +32,8 @@ const Layout = ({ children, title = 'Aoyama Design Inc.' }) => {
           background-color: transparent;
         `}
       >
-        <Navbar />
+        {isMenuOpen ? <FullScreenMenu toggleMenu={toggleMenu} /> : null}
+        <Navbar toggleMenu={toggleMenu} />
         <div>{children}</div>
         <Footer />
       </div>

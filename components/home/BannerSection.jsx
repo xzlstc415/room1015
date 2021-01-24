@@ -7,17 +7,24 @@ import Fade from "react-reveal/Fade";
 const BannerSection = () => {
   return (
     <Fade bottom duration={1000} distance="25px">
-      <div className="flex flex-col items-center mx-auto w-11/12 lg:w-9/12 md:flex-row lg:flex-row">
-        <div className="w-10/12 lg:w-5/12 space-y-4">
-          <div className="text-4xl font-josefinSans">
+      <div className="flex flex-col items-center mt-5 mx-auto w-11/12 md:mt-0 lg:mt-0 md:w-10/12 lg:w-9/12 md:flex-row lg:flex-row">
+        <div className="flex flex-col mb-10 items-center md:items-start lg:items-start w-10/12 md:mr-3 lg:mr-6 md:w-4/12 lg:w-5/12 space-y-4">
+          <div className="text-2xl font-josefinSans md:text-3xl lg:text-5xl lg:leading-normal">
             Custom design + Affordable renovations. We help you build a dream
             living experience.
           </div>
-          <button className="bg-green-400 p-4 rounded-2xl text-white shadow-md">
-            Request a Quote
+          <button className="bg-green-400 p-4 w-50 rounded-3xl text-white shadow-md">
+            Request a Quote Today
           </button>
         </div>
-        <Image src="/temp-picture.png" width={600} height={458} />
+        <div className="ml-auto">
+          <Image
+            src="/temp-picture.png"
+            width={600}
+            height={500}
+            objectFit="contain"
+          />
+        </div>
       </div>
     </Fade>
   );

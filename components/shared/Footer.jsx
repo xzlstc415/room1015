@@ -1,6 +1,6 @@
 /** @jsxRuntime classic /
 /** @jsx jsx */ jsx;
-import { css, jsx } from '@emotion/react';
+import { css, jsx } from "@emotion/react";
 
 const Footer = () => (
   <div
@@ -56,7 +56,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="flex justify-between clear-both">
-      <span class="light-grey">
+      <span className="light-grey">
         <span>©Copyright 2021 Aoyama Design Inc.</span>
       </span>
     </div>

@@ -28,6 +28,9 @@ module.exports = {
         beige:{
           '1': '#E5DDD4'
         },
+        blue:{
+          '1': '#364555'
+        },
       },
       zIndex: {
         '-1': '-1',

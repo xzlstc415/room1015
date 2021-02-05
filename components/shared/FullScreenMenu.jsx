@@ -28,7 +28,7 @@ const FullScreenMenu = ({ toggleMenu }) => (
         />
       </Link>
       <div
-        className="ml-auto text-3xl font-josefinSans"
+        className="ml-auto text-3xl font-josefinSans cursor-pointer"
         onClick={() => toggleMenu()}
       >
         Close

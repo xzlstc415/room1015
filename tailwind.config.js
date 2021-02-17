@@ -25,6 +25,12 @@ module.exports = {
           '2': 'rgba(0, 0, 0, 0.87)',
           '0': '#000',
         },
+        beige:{
+          '1': '#E5DDD4'
+        },
+        blue:{
+          '1': '#364555'
+        },
       },
       zIndex: {
         '-1': '-1',
@@ -42,6 +48,8 @@ module.exports = {
         elevation:
           '0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2)',
         nav: '0 2px 4px 0 rgba(0,0,0,0.2)',
+        featuredProjectLeft: "-10px -10px 0px #E5DDD4",
+        featuredProjectRight: "10px -10px 0px #364555",
       },
       width: {
         '1/13': '7.692307692%',
@@ -58,6 +66,8 @@ module.exports = {
         '12/13': '92.307692308%',
       },
       height: {
+        md: "35rem",
+        lg: "42rem",
         "10v": "10vh",
         "20v": "20vh",
         "30v": "30vh",

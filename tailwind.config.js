@@ -52,7 +52,7 @@ module.exports = {
         featuredProjectRight: "10px -10px 0px #364555",
       },
       width: {
-        processCard: "400px",
+        processCard: "350px",
         '1/13': '7.692307692%',
         '2/13': '15.384615384%',
         '3/13': '23.076923077%',
@@ -80,6 +80,9 @@ module.exports = {
         "90v": "90vh",
         "100v": "100vh",
       },
+      margin: {
+        processBannerOffset: "800px"
+      }
     },
   },
   variants: {},

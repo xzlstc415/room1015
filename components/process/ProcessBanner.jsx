@@ -18,7 +18,7 @@ const ProcessBanner = () => (
         objectPosition="50% 75%"
         className="opacity-60 "
       />
-      <div className="absolute bottom-0 p-6 bg-white font text-4xl">
+      <div className="absolute bottom-0 lg:mr-processBannerOffset p-6 bg-white font text-4xl">
         Our Service
       </div>
     </div>

@@ -9,9 +9,9 @@ const ProcessCard = ({ id = 0, title = "", description = "" }) => {
   if (oddOrEven === "odd")
     return (
       <Fade bottom duration={1000} distance="25px">
-        <div className="flex md:mt-40">
-          <div className="relative flex flex-col mx-auto w-screen md:w-auto">
-            <div className="md:absolute md:-top-32 md:-left-96 h-96 md:w-processCard p-4 pt-6 md:pr-20 bg-beige-1 font text-4xl">
+        <div className="flex lg:mt-40">
+          <div className="relative flex flex-col mx-auto w-screen lg:w-auto">
+            <div className="lg:absolute lg:-top-32 lg:-left-80 h-96 lg:w-processCard p-4 pt-6 lg:pr-20 bg-beige-1 font text-4xl">
               <div className="flex flex-col">
                 <div className="flex items-center">
                   <h1 className="text-8xl mr-8">0{id}</h1>
@@ -22,11 +22,11 @@ const ProcessCard = ({ id = 0, title = "", description = "" }) => {
             </div>
             <Image
               src="/temp-picture3.jpg"
-              width={500}
-              height={500}
+              width={450}
+              height={450}
               layout="intrinsic"
               objectFit="cover"
-              quality={100}
+              quality={75}
               className=""
             />
           </div>
@@ -37,15 +37,15 @@ const ProcessCard = ({ id = 0, title = "", description = "" }) => {
   if (oddOrEven === "even")
     return (
       <Fade bottom duration={1000} distance="25px">
-        <div className="flex md:mt-40">
+        <div className="flex lg:mt-40">
           <div className="relative flex flex-col mx-auto">
-            <div className="md:absolute md:-top-32 md:-right-96 h-96 md:w-processCard p-4 pt-6 bg-beige-1 font text-4xl">
+            <div className="lg:absolute lg:-top-32 lg:-right-80 h-96 lg:w-processCard p-4 pt-6 bg-beige-1 font text-4xl">
               <div className="flex flex-col">
                 <div className="flex items-center">
                   <h1 className="text-8xl mr-8">0{id}</h1>
                   <h1>{title}</h1>
                 </div>
-                <p className="text-xl md:ml-20">{description}</p>
+                <p className="text-xl lg:ml-20">{description}</p>
               </div>
             </div>
             <Image
@@ -54,7 +54,7 @@ const ProcessCard = ({ id = 0, title = "", description = "" }) => {
               height={500}
               layout="intrinsic"
               objectFit="cover"
-              quality={100}
+              quality={75}
               className=""
             />
           </div>

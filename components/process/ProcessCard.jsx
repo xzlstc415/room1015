@@ -50,8 +50,8 @@ const ProcessCard = ({ id = 0, title = "", description = "" }) => {
             </div>
             <Image
               src="/temp-picture3.jpg"
-              width={500}
-              height={500}
+              width={450}
+              height={450}
               layout="intrinsic"
               objectFit="cover"
               quality={75}

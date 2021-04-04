@@ -37,7 +37,7 @@ const Layout = ({ children, title = "Aoyama Design Inc." }) => {
         ) : (
           <div>
             <Navbar toggleMenu={toggleMenu} />
-            <div>{children}</div>
+            <div className="wrapper">{children}</div>
             <Footer />
           </div>
         )}

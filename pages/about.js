@@ -1,12 +1,12 @@
-import Layout from '../components/shared/Layout';
-import Image from 'next/image';
-import AboutCard from '../components/about/AboutCard';
-import Fade from 'react-reveal/Fade';
+import Layout from "../components/shared/Layout";
+import Image from "next/image";
+import AboutCard from "../components/about/AboutCard";
+import Fade from "react-reveal/Fade";
 
 const About = () => (
   <Layout>
-    <div className="  mb-10">
-      <div className=" mx-auto my-10 lg:mb-36 lg:mt-24 lg:h-60v w-12/13 md:w-10/13 lg:w-8/13">
+    <div className="mb-10">
+      <div className=" mx-auto my-10 lg:mb-36 lg:mt-24 lg:h-60v">
         <Fade bottom duration={1000} distance="25px">
           <div className="flex flex-col items-center justify-center lg:flex-row">
             <div className="mr-6 md:w-9/13 lg:w-7/13">

@@ -14,7 +14,7 @@ const ProcessBanner = () => (
         height={500}
         layout="fixed"
         objectFit="cover"
-        quality={100}
+        quality={50}
         objectPosition="50% 75%"
         className="opacity-60 "
       />

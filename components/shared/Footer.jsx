@@ -4,7 +4,7 @@ import { css, jsx } from "@emotion/react";
 
 const Footer = () => (
   <div
-    className="flex flex-col justify-between w-100 items-center"
+    className="flex flex-col justify-between w-full items-center mb-10"
     css={css`
       max-width: 1500px;
       margin: 0 auto;
@@ -14,7 +14,7 @@ const Footer = () => (
     `}
   >
     <div
-      className="w-3/5 float-left flex mb-14 justify-evenly flex-wrap"
+      className="w-3/5 float-left flex mb-14 justify-evenly flex-wrap mt-10"
       css={css`
         & > * {
           max-width: 140px;
@@ -55,7 +55,7 @@ const Footer = () => (
         <p>1672A Fischer-Hallman Rd, Kitchener ON N2R 0H9</p>
       </div>
     </div>
-    <div className="flex justify-between clear-both">
+    <div className="flex justify-between clear-both mb-10">
       <span className="light-grey">
         <span>©Copyright 2021 Aoyama Design Inc.</span>
       </span>

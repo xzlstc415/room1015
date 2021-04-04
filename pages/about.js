@@ -6,10 +6,10 @@ import Fade from "react-reveal/Fade";
 const About = () => (
   <Layout>
     <div className="mb-10">
-      <div className=" mx-auto my-10 lg:mb-36 lg:mt-24 lg:h-60v">
+      <div className=" mx-auto my-10 lg:mt-24 lg:h-60v">
         <Fade bottom duration={1000} distance="25px">
           <div className="flex flex-col items-center justify-center lg:flex-row">
-            <div className="mr-6 md:w-9/13 lg:w-7/13">
+            <div className="md:mr-6 w-12/13 md:w-9/13 lg:w-7/13">
               <h2 className="text-4xl mb-10 font-josefinSans">About Us</h2>
               <p className="font-roboto">
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -26,7 +26,7 @@ const About = () => (
         </Fade>
       </div>
 
-      <div className="mx-auto w-12/13 md:w-11/13 lg:w-10/13">
+      <div className="mx-auto w-12/13 lg:w-full">
         <AboutCard
           name="Aoyama Kaede"
           title="CEO/Senior designer"

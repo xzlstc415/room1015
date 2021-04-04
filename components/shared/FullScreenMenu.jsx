@@ -6,11 +6,9 @@ import NavLink from "./NavLink";
 import Fade from "react-reveal/Fade";
 
 const BigNavLink = ({ href, children, offset }) => (
-  <Fade duration={600 * offset}>
-    <a href={href}>
-      <div className="text-4xl font-josefinSans">{children}</div>
-    </a>
-  </Fade>
+  <a href={href}>
+    <h2 className="text-4xl font-josefinSans">{children}</h2>
+  </a>
 );
 
 const FullScreenMenu = ({ toggleMenu }) => (
@@ -34,38 +32,49 @@ const FullScreenMenu = ({ toggleMenu }) => (
         Close
       </div>
     </div>
-    <Fade duration={500}>
-      <div className="px-8">
-        <div className="flex flex-col space-y-5 mb-14">
-          <BigNavLink offset={1} href="/about">
-            About Us
-          </BigNavLink>
-          <BigNavLink offset={2} href="/projects">
-            Projects
-          </BigNavLink>
-          <BigNavLink offset={3} href="/process">
-            Process
-          </BigNavLink>
-          <BigNavLink offset={4} href="/blog">
-            Blog
-          </BigNavLink>
-          <BigNavLink offset={5} href="/contact">
-            Contact Us
-          </BigNavLink>
-        </div>
-        <hr
-          style={{
-            color: "black",
-            backgroundColor: "black",
-            height: 3,
-          }}
-        />
-        <div className="space-y-5 mt-10">
-          <a href="tel:6478981510">Telephone: 647-898-1510</a>
-          <div>Address: 1672A Fischer-Hallman Rd, Kitchener ON N2R 0H9</div>
-        </div>
+    <div className="px-8">
+      <Fade duration={500} cascade>
+        <ul className="flex flex-col space-y-5 mb-14">
+          <li>
+            <BigNavLink offset={1} href="/about">
+              About Us
+            </BigNavLink>
+          </li>
+          <li>
+            <BigNavLink offset={2} href="/projects">
+              Projects
+            </BigNavLink>
+          </li>
+          <li>
+            <BigNavLink offset={3} href="/process">
+              Process
+            </BigNavLink>
+          </li>
+          <li>
+            <BigNavLink offset={4} href="/blog">
+              Blog
+            </BigNavLink>
+          </li>
+          <li>
+            <BigNavLink offset={5} href="/contact">
+              Contact Us
+            </BigNavLink>
+          </li>
+        </ul>
+      </Fade>
+
+      <hr
+        style={{
+          color: "black",
+          backgroundColor: "black",
+          height: 3,
+        }}
+      />
+      <div className="space-y-5 mt-10">
+        <a href="tel:6478981510">Telephone: 647-898-1510</a>
+        <div>Address: 1672A Fischer-Hallman Rd, Kitchener ON N2R 0H9</div>
       </div>
-    </Fade>
+    </div>
   </div>
 );
 

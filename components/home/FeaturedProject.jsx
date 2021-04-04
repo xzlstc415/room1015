@@ -13,7 +13,7 @@ const FeaturedProject = ({
 }) => {
   return (
     <Fade bottom duration={1000} distance="25px">
-      <div className="flex mt-20 mx-auto w-11/12 md:w-10/12 lg:w-10/12 mb-20 md:relative">
+      <div className="flex mt-20 mx-auto w-11/12 lg:w-full mb-20 md:relative">
         {alignment === "left" ? (
           <LeftAlignedProject title={title} description={description} />
         ) : (

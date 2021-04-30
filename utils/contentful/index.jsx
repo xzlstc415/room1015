@@ -15,13 +15,14 @@ export const createClient = () => {
   return contentful.createClient(options);
 };
 
-export const fetchEntriesForContentType = async (contentType) => {
+export const fetchEntriesForContentType = async (contentType, order) => {
   let client = createClient();
   const types = await client.getContentTypes({
     name: contentType,
   });
   const entries = await client.getEntries({
     content_type: types.items[0].sys.id,
+    order,
   });
   if (entries.items) return entries.items;
   console.log(`Error getting Entries for ${contentType}.`);

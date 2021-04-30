@@ -7,7 +7,7 @@ const useProcesses = () => {
 
   const fetchProcesses = async () => {
     try {
-      const data = await fetchEntriesForContentType('Processes');
+      const data = await fetchEntriesForContentType('Processes', 'fields.step');
       if (data) {
         setProcesses(data);
       }

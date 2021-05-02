@@ -82,7 +82,11 @@ module.exports = {
       },
       margin: {
         processBannerOffset: "800px"
-      }
+      },
+      minHeight: {
+        '0': '0',
+        '200': '200px',
+       }
     },
   },
   variants: {},

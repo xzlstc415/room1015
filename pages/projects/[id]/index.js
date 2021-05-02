@@ -3,17 +3,17 @@ import Image from "next/image";
 
 const ProjectDetails = () => (
   <Layout>
-    <div className="relative flex justify-center w-screen">
+    <div className="relative flex justify-center w-screen full-bleed">
       <Image
         priority={true}
         src="/temp-picture4.jpg"
         width={2500}
         height={500}
-        layout="fixed"
+        layout="intrinsic"
         objectFit="cover"
         quality={50}
         objectPosition="50% 75%"
-        className="opacity-60 "
+        className="opacity-60"
       />
     </div>
 

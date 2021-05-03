@@ -6,9 +6,12 @@ module.exports = {
       issuer: {
         test: /\.(js|ts)x?$/,
       },
-      use: ['@svgr/webpack'],
+      use: ["@svgr/webpack"],
     });
 
     return config;
+  },
+  images: {
+    domains: ["images.ctfassets.net"],
   },
 };

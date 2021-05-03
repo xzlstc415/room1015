@@ -4,7 +4,12 @@ import { jsx, css } from "@emotion/react";
 import Fade from "react-reveal/Fade";
 import Image from "next/image";
 
-const ProcessCard = ({ id = 0, title = "", description = "" }) => {
+const ProcessCard = ({
+  id = 0,
+  title = "",
+  description = "",
+  imageUrl = "",
+}) => {
   const oddOrEven = id % 2 === 0 ? "even" : "odd";
   if (oddOrEven === "odd")
     return (
@@ -21,7 +26,7 @@ const ProcessCard = ({ id = 0, title = "", description = "" }) => {
               </div>
             </div>
             <Image
-              src="/temp-picture3.jpg"
+              src={"https:" + imageUrl}
               width={450}
               height={450}
               layout="intrinsic"

@@ -1,7 +1,7 @@
-import ProcessBanner from '../components/process/ProcessBanner';
-import ProcessCard from '../components/process/ProcessCard';
-import Layout from '../components/shared/Layout';
-import useProcesses from '../utils/useProcesses';
+import ProcessBanner from "../components/process/ProcessBanner";
+import ProcessCard from "../components/process/ProcessCard";
+import Layout from "../components/shared/Layout";
+import useProcesses from "../utils/useProcesses";
 
 const Process = () => {
   const { getProcesses } = useProcesses();
@@ -16,6 +16,7 @@ const Process = () => {
               id={process.fields.step}
               title={process.fields.title}
               description={process.fields.description}
+              imageUrl={process.fields.image.fields.file.url}
               key={key}
             />
           )

@@ -1,13 +1,17 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 import { fetchEntriesForContentType } from "./contentful";
 
 const useProjects = () => {
+  const router = useRouter();
+  console.log(router.query);
+
   const [projects, setProjects] = React.useState([]);
 
   const fetchProjects = async () => {
     try {
-      const data = await fetchEntriesForContentType("Projects", "fields.name");
+      const data = await fetchEntriesForContentType("Projects");
       console.log(data);
       if (data) {
         setProjects(data);

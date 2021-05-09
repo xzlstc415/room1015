@@ -8,10 +8,12 @@ const Projects = () => {
 
   const projects = getProjects();
 
-  projects.push({ name: "test", description: "test" });
-  projects.push({ name: "test", description: "test" });
-  projects.push({ name: "test", description: "test" });
-  projects.push({ name: "test", description: "test" });
+  // projects.push({ name: "test", description: "test" });
+  // projects.push({ name: "test", description: "test" });
+  // projects.push({ name: "test", description: "test" });
+  // projects.push({ name: "test", description: "test" });
+
+  console.log(projects);
 
   return (
     <Layout>

@@ -1,22 +1,9 @@
+import { bathroomOptions } from "../components/projects/bathroomOptions";
+import { bedroomOptions } from "../components/projects/bedroomOptions";
 import InputDropdown from "../components/projects/InputDropdown";
 import ProjectCard from "../components/projects/ProjectCard";
 import Layout from "../components/shared/Layout";
 import useProjects from "../utils/useProjects";
-
-const bedroomOptions = [
-  {
-    label: "1+",
-    value: 1,
-  },
-  {
-    label: "1+",
-    value: 1.5,
-  },
-  {
-    label: "2",
-    value: 2,
-  },
-];
 
 const Projects = () => {
   const { getProjects } = useProjects();
@@ -30,9 +17,13 @@ const Projects = () => {
         <div className="flex-row flex justify-between">
           <InputDropdown label="Sort By" />
           <InputDropdown label="Status" />
-          <InputDropdown label="Beds" options={bedroomOptions} />
-          <InputDropdown label="Baths" />
-          <InputDropdown label="Terms" />
+          <InputDropdown label="Beds" options={bedroomOptions} queryKey="bed" />
+          <InputDropdown
+            label="Baths"
+            options={bathroomOptions}
+            queryKey="bath"
+          />
+          <InputDropdown label="Terms" queryKey="bed" />
         </div>
       </div>
 

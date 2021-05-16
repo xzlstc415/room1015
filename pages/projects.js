@@ -10,11 +10,11 @@ const bedroomOptions = [
   },
   {
     label: "1+",
-    value: 2,
+    value: 1.5,
   },
   {
-    label: "3+",
-    value: 3,
+    label: "2",
+    value: 2,
   },
 ];
 

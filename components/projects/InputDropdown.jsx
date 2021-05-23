@@ -11,7 +11,7 @@ const InputDropdown = ({ label, options = [], queryKey = "" }) => {
   const selectedValue = router.query[queryKey] ? router.query[queryKey] : "";
 
   return (
-    <div>
+    <div className="flex flex-col">
       <label htmlFor={label}>{label}</label>
       <select
         name={label}

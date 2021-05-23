@@ -7,18 +7,51 @@ const useProjects = () => {
   const [projects, setProjects] = React.useState([]);
 
   const router = useRouter();
-  console.log(router.query);
 
   const query = {};
 
   if (router.query.bath) {
+    if (router.query.bath.includes(".5")) {
+      const value = router.query.bath.slice(0, 1);
+      query["fields.bath[gte]"] = value;
+    } else {
+      query["fields.bath[gte]"] = router.query.bath;
+      query["fields.bath[lt]"] = (parseInt(router.query.bath) + 1).toString();
+    }
   }
+
+  if (router.query.bed) {
+    if (router.query.bed.includes(".5")) {
+      const value = router.query.bed.slice(0, 1);
+      query["fields.bed[gte]"] = value;
+    } else {
+      query["fields.bed[gte]"] = router.query.bed;
+      query["fields.bed[lt]"] = (parseInt(router.query.bed) + 1).toString();
+    }
+  }
+
+  if (router.query.sort) {
+    if (router.query.sort === "asc") {
+      query.order = "fields.price";
+    }
+    if (router.query.sort === "desc") {
+      query.order = "-fields.price";
+    }
+    if (router.query.sort === "") {
+      query.order = "-fields.date";
+    }
+  }
+
+  if (router.query.status) {
+    query["fields.status"] = router.query.status;
+  }
+
+  //TODO REMOVE THIS LATER
+  console.log(query);
 
   const fetchProjects = async () => {
     try {
-      const data = await fetchEntriesForContentType("Projects", {
-        "fields.bath[gte]": 2,
-      });
+      const data = await fetchEntriesForContentType("Projects", query);
       console.log(data);
       if (data) {
         setProjects(data);
@@ -31,7 +64,7 @@ const useProjects = () => {
   const getProjects = () => {
     React.useEffect(() => {
       fetchProjects();
-    }, []);
+    }, [router.query]);
     return projects;
   };
 

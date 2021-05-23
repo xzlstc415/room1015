@@ -17,6 +17,12 @@ export const createClient = () => {
 
 export const fetchEntriesForContentType = async (contentType, query = {}) => {
   let client = createClient();
+
+  client
+    .getContentType("projects")
+    .then((contentType) => console.log(contentType))
+    .catch(console.error);
+
   const types = await client.getContentTypes({
     name: contentType,
   });

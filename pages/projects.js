@@ -1,9 +1,11 @@
 import { bathroomOptions } from "../components/projects/bathroomOptions";
 import { bedroomOptions } from "../components/projects/bedroomOptions";
+import { sortOptions } from "../components/projects/sortOptions";
 import InputDropdown from "../components/projects/InputDropdown";
 import ProjectCard from "../components/projects/ProjectCard";
 import Layout from "../components/shared/Layout";
 import useProjects from "../utils/useProjects";
+import { statusOptions } from "../components/projects/statusOptions";
 
 const Projects = () => {
   const { getProjects } = useProjects();
@@ -14,16 +16,18 @@ const Projects = () => {
     <Layout>
       <div className="flex-col bg-beige-1 px-5 py-10 w-full">
         <h2 className="text-4xl text-white mb-5">Find your Dream home</h2>
-        <div className="flex-row flex justify-between">
-          <InputDropdown label="Sort By" />
-          <InputDropdown label="Status" />
-          <InputDropdown label="Beds" options={bedroomOptions} queryKey="bed" />
+        <div className="flex-row flex space-x-10">
           <InputDropdown
-            label="Baths"
-            options={bathroomOptions}
-            queryKey="bath"
+            label="Sort By"
+            options={sortOptions}
+            queryKey="sort"
           />
-          <InputDropdown label="Terms" queryKey="bed" />
+          <InputDropdown
+            label="Status"
+            options={statusOptions}
+            queryKey="status"
+          />
+          <InputDropdown label="City" queryKey="city" />
         </div>
       </div>
 

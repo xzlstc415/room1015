@@ -1,55 +1,56 @@
 import Layout from "../../../components/shared/Layout";
 import Image from "next/image";
+import useProjectDetails from "../../../utils/useProjectDetails";
+import { useRouter } from "next/router";
 
-const ProjectDetails = () => (
-  <Layout>
-    <div className="relative flex justify-center w-screen full-bleed">
-      <Image
-        priority={true}
-        src="/temp-picture4.jpg"
-        width={2500}
-        height={500}
-        layout="intrinsic"
-        objectFit="cover"
-        quality={50}
-        objectPosition="50% 75%"
-        className="opacity-60"
-      />
-    </div>
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+});
 
-    <div>
-      <h1 className="flex justify-center">Project Details</h1>
-      <p className="flex mx-auto w-11/13 md:w-1/2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-    </div>
+const availableStyle = "bg-green-600 text-white px-2 ml-2";
+const unavailableStyle = "bg-red-600 text-white px-2 ml-2";
 
-    <div className="w-10/12 mx-auto">
-      <div className="grid grid-flow-row grid-cols-4 grid-rows-4 gap-4">
-        <div className="bg-red-100 col-span-2 row-span-2 h-96">1</div>
-        <div className="bg-red-100">2</div>
-        <div className="bg-red-100">3</div>
-        <div className="bg-red-100">4</div>
-        <div className="bg-red-100">5</div>
-        <div className="bg-red-100">6</div>
-        <div className="bg-red-100">7</div>
-        <div className="bg-red-100">8</div>
-        <div className="bg-red-100">9</div>
-        <div className="bg-red-100">10</div>
-        <div className="bg-red-100">11</div>
-        <div className="bg-red-100">12</div>
-        <div className="bg-red-100">12</div>
-        <div className="bg-red-100">12</div>
-        <div className="bg-red-100">12</div>
-        <div className="bg-red-100">12</div>
-        <div className="bg-red-100">12</div>
-        <div className="bg-red-100">12</div>
+const ProjectDetails = () => {
+  const { getProject } = useProjectDetails();
+
+  const project = getProject();
+
+  console.log(project);
+
+  const name = project?.fields?.name || "";
+  const price = project?.fields?.price
+    ? formatter.format(project.fields.price)
+    : "N/A";
+  const bedrooms = project?.fields?.bed || "N/A";
+  const bathrooms = project?.fields?.bath || "N/A";
+  const sqft = project?.fields?.sqft || "N/A";
+
+  const status = project?.fields?.status || "";
+
+  return (
+    <Layout>
+      <div className="px-4 w-full md:w-8/13">
+        <h1>
+          {name}
+          <span
+            className={
+              status === "available" ? availableStyle : unavailableStyle
+            }
+          >
+            {status.charAt(0).toUpperCase() + status.slice(1)}
+          </span>
+        </h1>
+        <div className="space-x-2">
+          <span className="font-bold">{price}</span>
+          <span>{`${bedrooms} Bed`}</span>
+          <span>{`${bathrooms} Bath`}</span>
+          <span>{`${sqft} sqft`}</span>
+        </div>
       </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default ProjectDetails;

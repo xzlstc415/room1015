@@ -33,3 +33,11 @@ export const fetchEntriesForContentType = async (contentType, query = {}) => {
   if (entries.items) return entries.items;
   console.log(`Error getting Entries for ${contentType}.`);
 };
+
+export const fetchSingleEntry = async (entryId) => {
+  let client = createClient();
+
+  const data = await client.getEntry(entryId);
+
+  return data;
+};

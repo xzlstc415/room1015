@@ -1,7 +1,12 @@
+/** @jsxRuntime classic /
+/** @jsx jsx */ jsx;
+import { jsx } from "@emotion/react";
+
 import Layout from "../../../components/shared/Layout";
-import Image from "next/image";
 import useProjectDetails from "../../../utils/useProjectDetails";
-import { useRouter } from "next/router";
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -42,13 +47,26 @@ const ProjectDetails = () => {
             {status.charAt(0).toUpperCase() + status.slice(1)}
           </span>
         </h1>
-        <div className="space-x-2">
+        <div className="space-x-2 my-3">
           <span className="font-bold">{price}</span>
           <span>{`${bedrooms} Bed`}</span>
           <span>{`${bathrooms} Bath`}</span>
           <span>{`${sqft} sqft`}</span>
         </div>
       </div>
+      <Carousel
+        showArrows={true}
+        infiniteLoop={true}
+        autoPlay={false}
+        emulateTouch={true}
+      >
+        <div>
+          <img src="/temp-picture.png" />
+        </div>
+        <div>
+          <img src="/temp-picture.png" />
+        </div>
+      </Carousel>
     </Layout>
   );
 };

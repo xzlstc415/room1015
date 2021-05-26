@@ -22,8 +22,6 @@ const ProjectDetails = () => {
 
   const project = getProject();
 
-  console.log(project);
-
   const name = project?.fields?.name || "";
   const price = project?.fields?.price
     ? formatter.format(project.fields.price)
@@ -33,6 +31,12 @@ const ProjectDetails = () => {
   const sqft = project?.fields?.sqft || "N/A";
 
   const status = project?.fields?.status || "";
+
+  const images = project?.fields?.images?.map(
+    (image) => `https://${image?.fields?.file?.url}`
+  );
+
+  console.log(project);
 
   return (
     <Layout>
@@ -60,12 +64,13 @@ const ProjectDetails = () => {
         autoPlay={false}
         emulateTouch={true}
       >
-        <div>
-          <img src="/temp-picture.png" />
-        </div>
-        <div>
-          <img src="/temp-picture.png" />
-        </div>
+        {images
+          ? images.map((image) => (
+              <div key={image}>
+                <img src={image} />
+              </div>
+            ))
+          : null}
       </Carousel>
     </Layout>
   );

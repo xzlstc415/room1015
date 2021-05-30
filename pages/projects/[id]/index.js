@@ -8,6 +8,8 @@ import useProjectDetails from "../../../utils/useProjectDetails";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -36,42 +38,49 @@ const ProjectDetails = () => {
     (image) => `https://${image?.fields?.file?.url}`
   );
 
-  console.log(project);
+  const details = project?.fields?.details
+    ? documentToReactComponents(project?.fields?.details)
+    : "";
 
   return (
     <Layout>
-      <div className="px-4 w-full md:w-8/13">
-        <h1>
-          {name}
-          <span
-            className={
-              status === "available" ? availableStyle : unavailableStyle
-            }
+      {Object.keys(project).length > 0 ? (
+        <div>
+          <div className="px-4  w-full md:w-8/13">
+            <h1>
+              {name}
+              <span
+                className={
+                  status === "available" ? availableStyle : unavailableStyle
+                }
+              >
+                {status.charAt(0).toUpperCase() + status.slice(1)}
+              </span>
+            </h1>
+            <div className="space-x-2 my-3">
+              <span className="font-bold">{price}</span>
+              <span>{`${bedrooms} Bed`}</span>
+              <span>{`${bathrooms} Bath`}</span>
+              <span>{`${sqft} sqft`}</span>
+            </div>
+          </div>
+          <Carousel
+            showArrows={true}
+            infiniteLoop={true}
+            autoPlay={false}
+            emulateTouch={true}
           >
-            {status.charAt(0).toUpperCase() + status.slice(1)}
-          </span>
-        </h1>
-        <div className="space-x-2 my-3">
-          <span className="font-bold">{price}</span>
-          <span>{`${bedrooms} Bed`}</span>
-          <span>{`${bathrooms} Bath`}</span>
-          <span>{`${sqft} sqft`}</span>
+            {images
+              ? images.map((image) => (
+                  <div key={image}>
+                    <img src={image} />
+                  </div>
+                ))
+              : null}
+          </Carousel>
+          {details ? <div className="px-4 ">{details}</div> : null}
         </div>
-      </div>
-      <Carousel
-        showArrows={true}
-        infiniteLoop={true}
-        autoPlay={false}
-        emulateTouch={true}
-      >
-        {images
-          ? images.map((image) => (
-              <div key={image}>
-                <img src={image} />
-              </div>
-            ))
-          : null}
-      </Carousel>
+      ) : null}
     </Layout>
   );
 };

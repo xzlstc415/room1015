@@ -8,12 +8,9 @@ const useProjectDetails = () => {
   const { id } = router.query;
   const [projectDetails, setProjectDetails] = React.useState([]);
 
-  console.log(id);
-
   const fetchProject = async () => {
     try {
       const data = await fetchSingleEntry(id);
-      console.log("this is the data", data);
       if (data) {
         setProjectDetails(data);
       }

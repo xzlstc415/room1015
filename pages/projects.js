@@ -5,6 +5,7 @@ import ProjectCard from "../components/projects/ProjectCard";
 import Layout from "../components/shared/Layout";
 import useProjects from "../utils/useProjects";
 import { statusOptions } from "../components/projects/statusOptions";
+import Image from "next/image";
 
 const Projects = () => {
   const { getProjects } = useProjects();
@@ -13,20 +14,33 @@ const Projects = () => {
 
   return (
     <Layout>
-      <div className="flex-col bg-beige-1 px-5 py-10 w-full">
-        <h2 className="text-4xl text-white mb-5">Find your Dream home</h2>
-        <div className="flex-row flex space-x-10">
-          <InputDropdown
-            label="Sort By"
-            options={sortOptions}
-            queryKey="sort"
-          />
-          <InputDropdown
-            label="Status"
-            options={statusOptions}
-            queryKey="status"
-          />
-          <InputDropdown label="City" queryKey="city" options={cityOptions} />
+      <div className="relative flex justify-center w-screen full-bleed min-h-300 ">
+        <Image
+          priority={true}
+          src="/temp-picture4.jpg"
+          width={2500}
+          height={500}
+          layout="intrinsic"
+          objectFit="cover"
+          quality={50}
+          objectPosition="50% 75%"
+          className="opacity-60 -z-100"
+        />
+        <div className="absolute bottom-0 flex-col bg-beige-1 px-5 py-5 md:py-10 w-full md:w-auto">
+          <h2 className="text-4xl text-white mb-5">Find your Dream home</h2>
+          <div className="flex flex-row justify-evenly md:justify-center md:flex md:space-x-10 flex-wrap">
+            <InputDropdown
+              label="Sort By"
+              options={sortOptions}
+              queryKey="sort"
+            />
+            <InputDropdown
+              label="Status"
+              options={statusOptions}
+              queryKey="status"
+            />
+            <InputDropdown label="City" queryKey="city" options={cityOptions} />
+          </div>
         </div>
       </div>
 

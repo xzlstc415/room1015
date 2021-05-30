@@ -28,7 +28,7 @@ const ProjectCard = ({ project }) => {
     "url(https:" + project?.fields?.images?.[0]?.fields?.file?.url + ")" || "";
 
   return (
-    <div className="w-11/13 h-auto  md:w-80 ">
+    <div className=" w-11/13  md:h-auto md:w-full md:p-3">
       <div
         onClick={() =>
           router.push({

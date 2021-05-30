@@ -4,11 +4,11 @@ export const sortOptions = [
     value: "",
   },
   {
-    label: "Lowest to Highest",
+    label: "Lowest price",
     value: "asc",
   },
   {
-    label: "Highest to Lowest",
+    label: "Highest price",
     value: "desc",
   },
 ];

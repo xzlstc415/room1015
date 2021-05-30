@@ -42,6 +42,10 @@ const useProjects = () => {
     }
   }
 
+  if (router.query.city) {
+    query["fields.city"] = router.query.city;
+  }
+
   if (router.query.status) {
     query["fields.status"] = router.query.status;
   }

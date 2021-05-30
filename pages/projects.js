@@ -1,6 +1,5 @@
-import { bathroomOptions } from "../components/projects/bathroomOptions";
-import { bedroomOptions } from "../components/projects/bedroomOptions";
 import { sortOptions } from "../components/projects/sortOptions";
+import { cityOptions } from "../components/projects/cityOptions";
 import InputDropdown from "../components/projects/InputDropdown";
 import ProjectCard from "../components/projects/ProjectCard";
 import Layout from "../components/shared/Layout";
@@ -27,7 +26,7 @@ const Projects = () => {
             options={statusOptions}
             queryKey="status"
           />
-          <InputDropdown label="City" queryKey="city" />
+          <InputDropdown label="City" queryKey="city" options={cityOptions} />
         </div>
       </div>
 
@@ -35,9 +34,11 @@ const Projects = () => {
         <h2>Recently Added</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5 justify-items-center w-full">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
+          {projects
+            ? projects.map((project) => (
+                <ProjectCard key={project.name} project={project} />
+              ))
+            : null}
         </div>
       </div>
     </Layout>

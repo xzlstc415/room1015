@@ -28,7 +28,7 @@ const ProjectCard = ({ project }) => {
     "url(https:" + project?.fields?.images?.[0]?.fields?.file?.url + ")" || "";
 
   return (
-    <div className="w-80 ">
+    <div className="w-11/13 h-auto  md:w-80 ">
       <div
         onClick={() =>
           router.push({
@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
         style={{
           backgroundImage: image,
         }}
-      ></div>
+      />
       <p className="whitespace-nowrap overflow-ellipsis overflow-hidden">
         {name}
       </p>

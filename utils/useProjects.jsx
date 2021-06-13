@@ -51,12 +51,13 @@ const useProjects = () => {
   }
 
   //TODO REMOVE THIS LATER
-  console.log(query);
+  //query.skip = 2;
+  //console.log(query);
 
   const fetchProjects = async () => {
     try {
       const data = await fetchEntriesForContentType("Projects", query);
-      console.log(data);
+      console.log("this is the data", data);
       if (data) {
         setProjects(data);
       }

@@ -6,11 +6,14 @@ import Layout from "../components/shared/Layout";
 import useProjects from "../utils/useProjects";
 import { statusOptions } from "../components/projects/statusOptions";
 import Image from "next/image";
+import Pagination from "../components/shared/Pagination";
 
 const Projects = () => {
   const { getProjects } = useProjects();
 
-  const projects = getProjects();
+  const { data: projects, total } = getProjects();
+
+  console.log(projects);
 
   return (
     <Layout>
@@ -44,8 +47,8 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="w-full">
-        <h2>Recently Added</h2>
+      <div className="w-full my-8">
+        <h2 className="px-3 mb-4 text-center md:text-left">Recently Added</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5 justify-items-center w-full">
           {projects
@@ -55,6 +58,7 @@ const Projects = () => {
             : null}
         </div>
       </div>
+      <Pagination />
     </Layout>
   );
 };

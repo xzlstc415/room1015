@@ -38,7 +38,11 @@ const InputDropdown = ({ label, options = [], queryKey = "" }) => {
           const isSelected = selectedValue === option.value;
 
           return (
-            <option selected={isSelected} value={option.value}>
+            <option
+              key={option.value}
+              selected={isSelected}
+              value={option.value}
+            >
               {option.label}
             </option>
           );

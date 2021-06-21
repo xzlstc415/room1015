@@ -5,7 +5,7 @@ import React from "react";
 import { jsx } from "@emotion/react";
 import { useRouter } from "next/router";
 
-const InputDropdown = ({ label, options = [], queryKey = "" }) => {
+const Dropdown = ({ label, options = [], queryKey = "" }) => {
   const router = useRouter();
 
   const selectedValue = router.query[queryKey] ? router.query[queryKey] : "";
@@ -17,6 +17,8 @@ const InputDropdown = ({ label, options = [], queryKey = "" }) => {
         name={label}
         onChange={(event) => {
           const newQuery = router.query;
+
+          delete newQuery.page;
 
           if (event.target.value === "") {
             delete newQuery[queryKey];
@@ -52,4 +54,4 @@ const InputDropdown = ({ label, options = [], queryKey = "" }) => {
   );
 };
 
-export default InputDropdown;
+export default Dropdown;

@@ -1,6 +1,6 @@
 import { sortOptions } from "../components/projects/sortOptions";
 import { cityOptions } from "../components/projects/cityOptions";
-import InputDropdown from "../components/projects/InputDropdown";
+import Dropdown from "../components/projects/Dropdown";
 import ProjectCard from "../components/projects/ProjectCard";
 import Layout from "../components/shared/Layout";
 import useProjects from "../utils/useProjects";
@@ -12,8 +12,6 @@ const Projects = () => {
   const { getProjects } = useProjects();
 
   const { data: projects, total } = getProjects();
-
-  console.log(projects);
 
   return (
     <Layout>
@@ -32,17 +30,13 @@ const Projects = () => {
         <div className="absolute bottom-0 flex-col bg-beige-1 px-5 py-5 md:py-10 w-full md:w-auto">
           <h2 className="text-4xl text-white mb-5">Find your Dream home</h2>
           <div className="flex flex-row justify-evenly md:justify-center md:flex md:space-x-10 flex-wrap">
-            <InputDropdown
-              label="Sort By"
-              options={sortOptions}
-              queryKey="sort"
-            />
-            <InputDropdown
+            <Dropdown label="Sort By" options={sortOptions} queryKey="sort" />
+            <Dropdown
               label="Status"
               options={statusOptions}
               queryKey="status"
             />
-            <InputDropdown label="City" queryKey="city" options={cityOptions} />
+            <Dropdown label="City" queryKey="city" options={cityOptions} />
           </div>
         </div>
       </div>
@@ -58,7 +52,9 @@ const Projects = () => {
             : null}
         </div>
       </div>
-      <Pagination />
+      <div className="mx-auto">
+        <Pagination count={total} />
+      </div>
     </Layout>
   );
 };

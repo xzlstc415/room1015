@@ -50,14 +50,13 @@ const useProjects = () => {
     query["fields.status"] = router.query.status;
   }
 
-  //TODO REMOVE THIS LATER
-  //query.skip = 2;
-  //console.log(query);
+  if (router.query.page) {
+    query.skip = 9 * parseInt(router.query.page) - 9;
+  }
 
   const fetchProjects = async () => {
     try {
       const data = await fetchEntriesForContentType("Projects", query);
-      console.log("this is the data", data);
       if (data) {
         setProjects(data);
       }
